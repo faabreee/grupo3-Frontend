@@ -65,7 +65,8 @@ public class UsuariosController {
             //m.addAttribute("loginModel", loginModel);
             //redireccionar a listado de integrantes
 
-            String url = "http://localhost:8081/listado/alumnos";
+            //String url = "http://localhost:8081/listado/alumnos";
+            String url = "https://demo-azure-backend.azurewebsites.net/listado/alumnos";
             ListadoResponseDTO listadoResponseDTO = restTemplateListado.getForObject(url, ListadoResponseDTO.class);
             ListadoModel listadoModel = new ListadoModel(listadoResponseDTO.lista(), "00", "");
             m.addAttribute("listadoModel", listadoModel);
@@ -87,7 +88,8 @@ public class UsuariosController {
     @GetMapping("/listado")
     public String listado(Model m) {
         try {
-            String url = "http://localhost:8081/listado/alumnos";
+            //String url = "http://localhost:8081/listado/alumnos";
+            String url = "https://demo-azure-backend.azurewebsites.net/listado/alumnos";
             ListadoResponseDTO listadoResponseDTO = restTemplateListado.getForObject(url, ListadoResponseDTO.class);
             ListadoModel listadoModel = new ListadoModel(listadoResponseDTO.lista(), "00", "");
             m.addAttribute("listadoModel", listadoModel);
